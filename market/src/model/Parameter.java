@@ -1,30 +1,52 @@
 package model;
 
+/**
+ * Класс для хранения параметров обьекта.
+ *
+ * @author Valeriy Burlakov
+ * @version 1.0
+ */
 public class Parameter {
-    private float heigth;
-    private float weigth;
+    /**
+     * Параметр высоты.
+     */
+    private float height;
+    /**
+     * Параметр ширины.
+     */
+    private float weight;
+    /**
+     * Параметр длинны.
+     */
     private float length;
 
-    public Parameter(float heigth, float weigth, float length) {
-        this.heigth = heigth;
-        this.weigth = weigth;
+    /**
+     * Конструктор класса, принимает все переменные класса.
+     *
+     * @param height Высота.
+     * @param weight Ширина.
+     * @param length Длинна.
+     */
+    public Parameter(float height, float weight, float length) {
+        this.height = height;
+        this.weight = weight;
         this.length = length;
     }
 
-    public float getHeigth() {
-        return heigth;
+    public float getHeight() {
+        return height;
     }
 
-    public void setHeigth(float heigth) {
-        this.heigth = heigth;
+    public void setHeight(float height) {
+        this.height = height;
     }
 
-    public float getWeigth() {
-        return weigth;
+    public float getWeight() {
+        return weight;
     }
 
-    public void setWeigth(float weigth) {
-        this.weigth = weigth;
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
     public float getLength() {

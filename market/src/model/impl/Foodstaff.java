@@ -1,14 +1,33 @@
 package model.impl;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
-public class Foodstaff extends AbstractProduct {
-
+/**
+ * Абстрактный класс для товаров имеющих пищевую ценность.
+ *
+ * @author Valeriy Burlakov
+ * @version 1.0
+ */
+public abstract class Foodstaff extends AbstractProduct {
+    /**
+     * Показатель калорийности товара.
+     */
     private int calorieContent;
+    /**
+     * Дата истечения срока годности.
+     */
     private LocalDateTime expirationDate;
 
-    public Foodstaff(String name, float price, int quantity, int calorieContent, LocalDateTime expirationDate) {
+    /**
+     * Конструктор класса, принимает все переменные класса.
+     *
+     * @param name           Название товара.
+     * @param price          Цена товара.
+     * @param quantity       Количество товара.
+     * @param calorieContent Каллорийность товара.
+     * @param expirationDate Дата выхода срока годности.
+     */
+    Foodstaff(String name, float price, int quantity, int calorieContent, LocalDateTime expirationDate) {
         super(name, price, quantity);
         this.calorieContent = calorieContent;
         this.expirationDate = expirationDate;

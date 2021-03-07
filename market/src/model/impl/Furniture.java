@@ -2,14 +2,33 @@ package model.impl;
 
 import model.Parameter;
 
+/**
+ * Класс товаров представляющих собой мебель.
+ *
+ * @author Valeriy Burlakov
+ * @version 1.0
+ */
 public class Furniture extends AbstractProduct {
+    /**
+     * Хранит показатели ширины, длинны и высоты товара.
+     */
     private Parameter parameter;
-    private float weigth;
+    /**
+     * Показатель веса товара.
+     */
+    private float weight;
 
-    public Furniture(String name, float price, int quantity, Parameter parameter, float weigth) {
+    /**
+     * @param name      Название товара.
+     * @param price     Цена товара.
+     * @param quantity  Количество товара.
+     * @param parameter Параметры товара.
+     * @param weight    Вес единицы товара
+     */
+    public Furniture(String name, float price, int quantity, Parameter parameter, float weight) {
         super(name, price, quantity);
         this.parameter = parameter;
-        this.weigth = weigth;
+        this.weight = weight;
     }
 
     public Parameter getParameter() {
@@ -20,12 +39,12 @@ public class Furniture extends AbstractProduct {
         this.parameter = parameter;
     }
 
-    public float getWeigth() {
-        return weigth;
+    public float getWeight() {
+        return weight;
     }
 
-    public void setWeigth(float weigth) {
-        this.weigth = weigth;
+    public void setWeight(float weight) {
+        this.weight = weight;
     }
 
 }
