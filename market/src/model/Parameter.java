@@ -1,5 +1,7 @@
 package model;
 
+import exception.ProductIllegalArgumentException;
+
 /**
  * Класс для хранения параметров обьекта.
  *
@@ -33,7 +35,7 @@ public class Parameter {
             this.weight = weight;
             this.length = length;
         } else {
-            throw new IllegalArgumentException("Аргументы не могут быть отрицательными или равными нулю");
+            throw new ProductIllegalArgumentException("Аргументы не могут быть отрицательными или равными нулю");
         }
     }
 
@@ -45,7 +47,7 @@ public class Parameter {
         if (height > 0) {
             this.height = height;
         } else {
-            throw new IllegalArgumentException("Высота не может быть отрицательной или равной нулю");
+            throw new ProductIllegalArgumentException("Высота не может быть отрицательной или равной нулю");
         }
     }
 
@@ -57,7 +59,7 @@ public class Parameter {
         if (weight > 0) {
             this.weight = weight;
         } else {
-            throw new IllegalArgumentException("Ширина не может быть отрицательной или равной нулю");
+            throw new ProductIllegalArgumentException("Ширина не может быть отрицательной или равной нулю");
         }
     }
 
@@ -69,7 +71,7 @@ public class Parameter {
         if (length > 0) {
             this.length = length;
         } else {
-            throw new IllegalArgumentException("Длинна не может быть отрицательной или равной нулю");
+            throw new ProductIllegalArgumentException("Длинна не может быть отрицательной или равной нулю");
         }
     }
 }

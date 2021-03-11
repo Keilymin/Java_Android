@@ -1,5 +1,7 @@
 package model.impl;
 
+import exception.ProductIllegalArgumentException;
+
 import java.time.LocalDateTime;
 
 /**
@@ -29,7 +31,7 @@ public class Drink extends Foodstaff {
         if (volume > 0) {
             this.volume = volume;
         } else {
-            throw new IllegalArgumentException("Объем напитка не может быть отрицательным или равным нулю");
+            throw new ProductIllegalArgumentException("Объем напитка не может быть отрицательным или равным нулю");
         }
     }
 
@@ -41,7 +43,7 @@ public class Drink extends Foodstaff {
         if (volume > 0) {
             this.volume = volume;
         } else {
-            throw new IllegalArgumentException("Объем напитка не может быть отрицательным или равным нулю");
+            throw new ProductIllegalArgumentException("Объем напитка не может быть отрицательным или равным нулю");
         }
     }
 }

@@ -1,5 +1,6 @@
 package model.impl;
 
+import exception.ProductIllegalArgumentException;
 import model.Parameter;
 
 /**
@@ -31,7 +32,7 @@ public class Furniture extends AbstractProduct {
         if (weight > 0) {
             this.weight = weight;
         } else {
-            throw new IllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
+            throw new ProductIllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
         }
     }
 
@@ -51,7 +52,7 @@ public class Furniture extends AbstractProduct {
         if (weight > 0) {
             this.weight = weight;
         } else {
-            throw new IllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
+            throw new ProductIllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
         }
     }
 

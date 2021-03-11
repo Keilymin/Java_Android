@@ -1,9 +1,9 @@
 package model.impl;
 
+import exception.ProductIllegalArgumentException;
 import model.Product;
 import model.Promotional;
 
-import java.io.IOException;
 
 /**
  * Абстрактный класс товара магазина.
@@ -36,17 +36,17 @@ public abstract class AbstractProduct implements Product, Promotional {
         if (name.length() > 0) {
             this.name = name;
         } else {
-            throw new IllegalArgumentException("Имя товара не введено");
+            throw new ProductIllegalArgumentException("Имя товара не введено");
         }
         if (price >= 0) {
             this.price = price;
         } else {
-            throw new IllegalArgumentException("Цена товара не может быть отрицательной");
+            throw new ProductIllegalArgumentException("Цена товара не может быть отрицательной");
         }
         if (quantity >= 0) {
             this.quantity = quantity;
         } else {
-            throw new IllegalArgumentException("Количество товара не может быть отрицательным");
+            throw new ProductIllegalArgumentException("Количество товара не может быть отрицательным");
         }
     }
 
@@ -58,7 +58,7 @@ public abstract class AbstractProduct implements Product, Promotional {
         if (name.length() > 0) {
             this.name = name;
         } else {
-            throw new IllegalArgumentException("Имя товара не введено");
+            throw new ProductIllegalArgumentException("Имя товара не введено");
         }
     }
 
@@ -70,7 +70,7 @@ public abstract class AbstractProduct implements Product, Promotional {
         if (price >= 0) {
             this.price = price;
         } else {
-            throw new IllegalArgumentException("Цена товара не может быть отрицательной");
+            throw new ProductIllegalArgumentException("Цена товара не может быть отрицательной");
         }
     }
 
@@ -82,7 +82,7 @@ public abstract class AbstractProduct implements Product, Promotional {
         if (quantity >= 0) {
             this.quantity = quantity;
         } else {
-            throw new IllegalArgumentException("Количество товара не может быть отрицательным");
+            throw new ProductIllegalArgumentException("Количество товара не может быть отрицательным");
         }
     }
 

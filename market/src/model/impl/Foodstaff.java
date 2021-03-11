@@ -1,5 +1,7 @@
 package model.impl;
 
+import exception.ProductIllegalArgumentException;
+
 import java.time.LocalDateTime;
 
 /**
@@ -32,12 +34,12 @@ public abstract class Foodstaff extends AbstractProduct {
         if (calorieContent > 0) {
             this.calorieContent = calorieContent;
         } else {
-            throw new IllegalArgumentException("Каллорийность продукта не может быть отрицательным или равным нулю");
+            throw new ProductIllegalArgumentException("Каллорийность продукта не может быть отрицательным или равным нулю");
         }
         if (expirationDate.isAfter(LocalDateTime.now())) {
             this.expirationDate = expirationDate;
         } else {
-            throw new IllegalArgumentException("Срок годности продукта не может быть заведомо просрочен");
+            throw new ProductIllegalArgumentException("Срок годности продукта не может быть заведомо просрочен");
         }
     }
 
@@ -49,7 +51,7 @@ public abstract class Foodstaff extends AbstractProduct {
         if (calorieContent > 0) {
             this.calorieContent = calorieContent;
         } else {
-            throw new IllegalArgumentException("Каллорийность продукта не может быть отрицательным или равным нулю");
+            throw new ProductIllegalArgumentException("Каллорийность продукта не может быть отрицательным или равным нулю");
         }
     }
 
@@ -61,7 +63,7 @@ public abstract class Foodstaff extends AbstractProduct {
         if (expirationDate.isAfter(LocalDateTime.now())) {
             this.expirationDate = expirationDate;
         } else {
-            throw new IllegalArgumentException("Срок годности продукта не может быть заведомо просрочен");
+            throw new ProductIllegalArgumentException("Срок годности продукта не может быть заведомо просрочен");
         }
     }
 }
