@@ -26,7 +26,11 @@ public class Drink extends Foodstaff {
      */
     public Drink(String name, float price, int quantity, int calorieContent, LocalDateTime expirationDate, float volume) {
         super(name, price, quantity, calorieContent, expirationDate);
-        this.volume = volume;
+        if (volume > 0) {
+            this.volume = volume;
+        } else {
+            throw new IllegalArgumentException("Объем напитка не может быть отрицательным или равным нулю");
+        }
     }
 
     public float getVolume() {
@@ -34,6 +38,10 @@ public class Drink extends Foodstaff {
     }
 
     public void setVolume(float volume) {
-        this.volume = volume;
+        if (volume > 0) {
+            this.volume = volume;
+        } else {
+            throw new IllegalArgumentException("Объем напитка не может быть отрицательным или равным нулю");
+        }
     }
 }

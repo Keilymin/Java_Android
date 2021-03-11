@@ -3,6 +3,8 @@ package model.impl;
 import model.Product;
 import model.Promotional;
 
+import java.io.IOException;
+
 /**
  * Абстрактный класс товара магазина.
  *
@@ -31,9 +33,21 @@ public abstract class AbstractProduct implements Product, Promotional {
      * @param quantity Количество товара.
      */
     AbstractProduct(String name, float price, int quantity) {
-        this.name = name;
-        this.price = price;
-        this.quantity = quantity;
+        if (name.length() > 0) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Имя товара не введено");
+        }
+        if (price >= 0) {
+            this.price = price;
+        } else {
+            throw new IllegalArgumentException("Цена товара не может быть отрицательной");
+        }
+        if (quantity >= 0) {
+            this.quantity = quantity;
+        } else {
+            throw new IllegalArgumentException("Количество товара не может быть отрицательным");
+        }
     }
 
     public String getName() {
@@ -41,7 +55,11 @@ public abstract class AbstractProduct implements Product, Promotional {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name.length() > 0) {
+            this.name = name;
+        } else {
+            throw new IllegalArgumentException("Имя товара не введено");
+        }
     }
 
     private float getPrice() {
@@ -49,7 +67,11 @@ public abstract class AbstractProduct implements Product, Promotional {
     }
 
     private void setPrice(float price) {
-        this.price = price;
+        if (price >= 0) {
+            this.price = price;
+        } else {
+            throw new IllegalArgumentException("Цена товара не может быть отрицательной");
+        }
     }
 
     public int getQuantity() {
@@ -57,7 +79,11 @@ public abstract class AbstractProduct implements Product, Promotional {
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        if (quantity >= 0) {
+            this.quantity = quantity;
+        } else {
+            throw new IllegalArgumentException("Количество товара не может быть отрицательным");
+        }
     }
 
     /**

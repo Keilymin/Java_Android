@@ -28,7 +28,11 @@ public class Furniture extends AbstractProduct {
     public Furniture(String name, float price, int quantity, Parameter parameter, float weight) {
         super(name, price, quantity);
         this.parameter = parameter;
-        this.weight = weight;
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
+        }
     }
 
     public Parameter getParameter() {
@@ -44,7 +48,11 @@ public class Furniture extends AbstractProduct {
     }
 
     public void setWeight(float weight) {
-        this.weight = weight;
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
+        }
     }
 
 }

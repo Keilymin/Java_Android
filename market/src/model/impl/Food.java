@@ -26,7 +26,11 @@ public class Food extends Foodstaff {
      */
     public Food(String name, float price, int quantity, int calorieContent, LocalDateTime expirationDate, float weight) {
         super(name, price, quantity, calorieContent, expirationDate);
-        this.weight = weight;
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
+        }
     }
 
     public float getWeight() {
@@ -34,6 +38,10 @@ public class Food extends Foodstaff {
     }
 
     public void setWeight(float weight) {
-        this.weight = weight;
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("Вес продукта не может быть отрицательным или равным нулю");
+        }
     }
 }

@@ -29,8 +29,16 @@ public abstract class Foodstaff extends AbstractProduct {
      */
     Foodstaff(String name, float price, int quantity, int calorieContent, LocalDateTime expirationDate) {
         super(name, price, quantity);
-        this.calorieContent = calorieContent;
-        this.expirationDate = expirationDate;
+        if (calorieContent > 0) {
+            this.calorieContent = calorieContent;
+        } else {
+            throw new IllegalArgumentException("Каллорийность продукта не может быть отрицательным или равным нулю");
+        }
+        if (expirationDate.isAfter(LocalDateTime.now())) {
+            this.expirationDate = expirationDate;
+        } else {
+            throw new IllegalArgumentException("Срок годности продукта не может быть заведомо просрочен");
+        }
     }
 
     public int getCalorieContent() {
@@ -38,7 +46,11 @@ public abstract class Foodstaff extends AbstractProduct {
     }
 
     public void setCalorieContent(int calorieContent) {
-        this.calorieContent = calorieContent;
+        if (calorieContent > 0) {
+            this.calorieContent = calorieContent;
+        } else {
+            throw new IllegalArgumentException("Каллорийность продукта не может быть отрицательным или равным нулю");
+        }
     }
 
     public LocalDateTime getExpirationDate() {
@@ -46,6 +58,10 @@ public abstract class Foodstaff extends AbstractProduct {
     }
 
     public void setExpirationDate(LocalDateTime expirationDate) {
-        this.expirationDate = expirationDate;
+        if (expirationDate.isAfter(LocalDateTime.now())) {
+            this.expirationDate = expirationDate;
+        } else {
+            throw new IllegalArgumentException("Срок годности продукта не может быть заведомо просрочен");
+        }
     }
 }

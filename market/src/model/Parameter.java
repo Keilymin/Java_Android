@@ -28,9 +28,13 @@ public class Parameter {
      * @param length Длинна.
      */
     public Parameter(float height, float weight, float length) {
-        this.height = height;
-        this.weight = weight;
-        this.length = length;
+        if (height > 0 && weight > 0 && length > 0) {
+            this.height = height;
+            this.weight = weight;
+            this.length = length;
+        } else {
+            throw new IllegalArgumentException("Аргументы не могут быть отрицательными или равными нулю");
+        }
     }
 
     public float getHeight() {
@@ -38,7 +42,11 @@ public class Parameter {
     }
 
     public void setHeight(float height) {
-        this.height = height;
+        if (height > 0) {
+            this.height = height;
+        } else {
+            throw new IllegalArgumentException("Высота не может быть отрицательной или равной нулю");
+        }
     }
 
     public float getWeight() {
@@ -46,7 +54,11 @@ public class Parameter {
     }
 
     public void setWeight(float weight) {
-        this.weight = weight;
+        if (weight > 0) {
+            this.weight = weight;
+        } else {
+            throw new IllegalArgumentException("Ширина не может быть отрицательной или равной нулю");
+        }
     }
 
     public float getLength() {
@@ -54,6 +66,10 @@ public class Parameter {
     }
 
     public void setLength(float length) {
-        this.length = length;
+        if (length > 0) {
+            this.length = length;
+        } else {
+            throw new IllegalArgumentException("Длинна не может быть отрицательной или равной нулю");
+        }
     }
 }
