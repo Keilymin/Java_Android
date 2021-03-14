@@ -1,6 +1,9 @@
+import model.impl.Food;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -16,5 +19,6 @@ public class Main {
             e.printStackTrace();
         }
         log.log(Level.INFO,"Start");
+        Food food = new Food("Egg",-5,3,100, LocalDateTime.now(),5);
     }
 }

@@ -1,11 +1,16 @@
-
-Чт мар 11 13:30:55 EET 2021 Main main
+Вс мар 14 20:47:11 EET 2021 Main main
 INFO: Start
-Чт мар 11 13:40:30 EET 2021 Main main
+Вс мар 14 20:47:11 EET 2021 exception.ProductIllegalArgumentException <init>
+WARNING: Цена товара не может быть отрицательной
+    at model.impl.AbstractProduct.<init>(AbstractProduct.java:44)
+    at model.impl.Foodstaff.<init>(Foodstaff.java:33)
+    at model.impl.Food.<init>(Food.java:30)
+    at Main.main(Main.java:22)
+Вс мар 14 21:02:14 EET 2021 Main main
 INFO: Start
-Чт мар 11 13:41:25 EET 2021 Main main
-INFO: Start
-Чт мар 11 13:42:01 EET 2021 Main main
-INFO: Start
-Чт мар 11 13:42:32 EET 2021 Main main
-INFO: Start
+Вс мар 14 21:02:14 EET 2021 exception.ProductIllegalArgumentException <init>
+WARNING: Цена товара не может быть отрицательной
+    at model.impl.AbstractProduct.<init>(AbstractProduct.java:44)
+    at model.impl.Foodstaff.<init>(Foodstaff.java:33)
+    at model.impl.Food.<init>(Food.java:30)
+    at Main.main(Main.java:22)
