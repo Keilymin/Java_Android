@@ -62,11 +62,11 @@ public abstract class AbstractProduct implements Product, Promotional {
         }
     }
 
-    private float getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    private void setPrice(float price) {
+    public void setPrice(float price) {
         if (price >= 0) {
             this.price = price;
         } else {

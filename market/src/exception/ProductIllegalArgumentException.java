@@ -10,7 +10,7 @@ public class ProductIllegalArgumentException extends RuntimeException {
         Logger log = Logger.getLogger(this.getClass().getName());
         Logger parentLog = log.getParent();
         if (parentLog != null && parentLog.getHandlers().length > 0) {
-            parentLog.removeHandler(parentLog.getHandlers()[1]);
+            parentLog.removeHandler(parentLog.getHandlers()[parentLog.getHandlers().length-1]);
         }
         if (message.length() == 0) {
             log.log(Level.WARNING, "Ошибка ввода данных");

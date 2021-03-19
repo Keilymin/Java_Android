@@ -24,8 +24,8 @@ public class FoodstaffServiceImpl extends ProductServiceImpl {
      * @param foodstaff Пищевой товар.
      * @return испорчен ли товар.
      */
-    private boolean isExpirationDate(Foodstaff foodstaff) {
-        return foodstaff.getExpirationDate().isAfter(LocalDateTime.now());
+    public boolean isExpirationDate(Foodstaff foodstaff) {
+        return foodstaff.getExpirationDate().isBefore(LocalDateTime.now());
 
     }
 
