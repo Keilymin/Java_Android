@@ -40,7 +40,11 @@ public class AbstractProductTest {
         product = new AbstractProduct(goodName, goodPrice, badQuantity) {
         };
     }
-
+    @Test(expected = NullPointerException.class)
+    public void constructorNullName() {
+        product = new AbstractProduct(null, goodPrice, goodQuantity) {
+        };
+    }
     @Test
     public void getName() {
         product = new AbstractProduct(goodName, goodPrice, goodQuantity) {

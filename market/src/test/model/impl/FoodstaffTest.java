@@ -20,7 +20,6 @@ public class FoodstaffTest {
     private final LocalDateTime badExpirationDate = LocalDateTime.of(2000, 5, 30, 5, 30);
     Product foodstaff;
 
-
     @Test
     public void constructor() {
         foodstaff = new Foodstaff(goodName, goodPrice, goodQuantity, goodCalorieContent, goodExpirationDate) {
@@ -36,6 +35,12 @@ public class FoodstaffTest {
     @Test(expected = ProductIllegalArgumentException.class)
     public void constructorBadExpirationDate() {
         foodstaff = new Foodstaff(goodName, goodPrice, goodQuantity, goodCalorieContent, badExpirationDate) {
+        };
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void constructorNullExpirationDate() {
+        foodstaff = new Foodstaff(goodName, goodPrice, goodQuantity, goodCalorieContent, null) {
         };
     }
 

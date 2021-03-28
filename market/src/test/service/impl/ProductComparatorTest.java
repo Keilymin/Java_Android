@@ -35,6 +35,6 @@ public class ProductComparatorTest {
     public void compare() {
         AbstractProduct[] ap1 = {furniture, drink, food, null, null};
         Arrays.sort(ap,new ProductComparator());
-        Assert.assertArrayEquals(ap,ap1);
+        Assert.assertArrayEquals(ap1,ap);
     }
 }

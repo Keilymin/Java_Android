@@ -33,7 +33,7 @@ public class ProductFilterTest {
     @Test
     public void filterName() {
         AbstractProduct[] ap1 = {null,furniture,null};
-        ProductFilter.filterName(ap,"Диван 'Роскошь'");
-        Assert.assertArrayEquals(ap,ap1);
+        ProductFilter.filterByName(ap,"Диван 'Роскошь'");
+        Assert.assertArrayEquals(ap1,ap);
     }
 }

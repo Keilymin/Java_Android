@@ -34,6 +34,6 @@ public class ProductSorterTest {
     public void sortByName() {
         AbstractProduct[] ap1 = {furniture, drink, food, null, null};
         ProductSorter.sortByName(ap);
-        Assert.assertArrayEquals(ap,ap1);
+        Assert.assertArrayEquals(ap1, ap);
     }
 }
